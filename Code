@@ -1,0 +1,16 @@
+import random
+print("Let's begin the game!")
+options = ["r", "p", "s"]
+
+while True:
+    user_input=input("Pick any one. r for rock,p for paper, s for scissors: ")
+    random_number = random.randint(0, 2)
+    # rock: 0, paper: 1, scissors: 2
+    computer_pick = options[random_number]
+    print("Computer picked", computer_pick + ".")
+    
+    if user_input == "r" and computer_pick == "s":print("You won!")
+    elif user_input == "p" and computer_pick == "r":print("You won!")
+    elif user_input == "s" and computer_pick == "p":print("You won!")
+    else:print("You lost!")
+    # r > s, s > p, p > r cases where the player wins.
